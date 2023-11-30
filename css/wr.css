@@ -1,0 +1,279 @@
+body{
+    font-family: Anton;
+    background-color: rgba(1, 145, 255, 0.585);
+    margin: 0;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+/*webkit-scrollbar: Propriedade para definir a largura da barra de rolagem*/
+html ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /*webkit-scrollbar-track: Esta propriedade serve para customizar o background da barra de rolagem */
+  html ::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: rgb(226, 11, 11);
+  }
+  
+  /* webkit-scrollbar-thumb: Esta propriedade serve para customizar a barrinha da barra de rolagem */
+  html ::-webkit-scrollbar-track {
+    background: #000000;  
+  }
+
+.menu{
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    height: 90px;
+    background-color: rgb(0, 0, 0);
+}
+
+.menu-list{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu-list a {
+    margin-right: 20px;
+    color: whitesmoke;
+}
+
+.hamburguer-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 35px;
+}
+
+.bar {
+    width: 100%;
+    height: 2px;
+    background-color: whitesmoke;
+    transition: transform 0.3s;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+a{
+    color: black;
+}
+
+hr{
+    border: none;
+    height: 4px;
+    background-color:#FF3D4A ; /* Cor da linha */
+    border-radius: 5px; /* Raio para bordas arredondadas */
+    margin: 8px auto;
+    width: 90%;
+}
+
+.login{
+    position: fixed;
+    top: 4%;
+    right: 8%;
+  }
+  
+button:hover {
+    background-color: #FF5962; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+button:active {
+    background-color: #E82A36; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+button:focus {
+    outline: none;
+  }
+  
+button:disabled {
+    opacity: 0.7; 
+    cursor: not-allowed;
+  }
+  
+.titulo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.lista-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.lista {
+    display: inline-block;
+}
+  
+.lista a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: whitesmoke;
+}
+  
+.lista a:hover {
+    color: #FF3D4A;
+}
+
+img{
+    width: 100%;
+    border-radius: 0%;
+}
+
+.imagem-logo {
+    position:relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.imagem-logo img{
+    width: 10%;
+}
+
+.image-wr {
+    width: 95%;
+    border-radius: 20px;
+    margin: 3% !important; 
+}
+
+.sub-titulo{
+    text-align: center;
+    color: rgb(253, 253, 253);
+    border: 2px solid #FF3D4A;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+    height: auto;
+    margin: 0.7%;  
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 10px;
+  }
+
+.image-box {
+  text-align: center;
+  border: 2px solid #FF3D4A;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s;
+}
+
+.image-box:hover{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.image-box img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image-box h2 {
+  font-size: 1.7rem;
+  margin: 10px 0;
+}
+
+.image-box p {
+  font-size: 1rem;
+  color: #000000;
+}
+
+@media screen and (max-width:980px)
+{
+    h1{
+        font-size: 2rem;
+    }
+
+    hr{
+        width: 90%;
+    }
+
+    .menu-list {
+        display: none;
+    }
+
+    .hamburguer-menu {
+        display: flex;
+    }
+
+    .hamburguer-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburguer-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburguer-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hamburguer-menu.active ~ .menu-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        padding: 10px;
+    }
+
+    .hamburguer-menu.active ~ .menu-list li {
+        margin: 10px 0;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+    .icon{
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .direitos{
+        font-size: smaller;
+    }
+
+    .logo{
+        width: 30%;
+    }
+
+}
